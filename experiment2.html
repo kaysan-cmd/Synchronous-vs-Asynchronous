@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asynchronous</title>
+  </head>
+  <body>
+    <script>
+      // Asynchronous — Non-blocking (tidak menunggu proses selesai)
+
+      console.log("1. Mulai muat halaman");
+
+      // Mengambil data di background
+      fetch("https://api.example.com/buku")
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("3. Data buku diterima:", data.length, "buku");
+        });
+
+      // Langsung dieksekusi tanpa menunggu fetch
+      console.log("2. Tampilkan status loading...");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Synchronous</title>
+  </head>
+  <body>
+    <script>
+      // Synchronous — Dieksekusi berurutan dari atas ke bawah
+
+      console.log("Mulai");
+
+      function hitungStok(daftarBuku) {
+        let total = 0;
+        for (const item of daftarBuku) {
+          total += item.stok;
+        }
+        return total;
+      }
+
+      const daftarBuku = [
+        { judul: "Laskar Pelangi", stok: 3 },
+        { judul: "Sapiens", stok: 2 },
+        { judul: "Atomic Habits", stok: 5 },
+      ];
+
+      const totalStok = hitungStok(daftarBuku);
+      console.log("Total stok:", totalStok);
+      console.log("Selesai");
+    </script>
+  </body>
+</html>

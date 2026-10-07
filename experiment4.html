@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eksperimen Async</title>
+  </head>
+  <body>
+    <script>
+      // Eksperimen 1: setTimeout delay 1000ms
+      console.log("1 - Pertama");
+
+      setTimeout(() => {
+        console.log("2 - Dari setTimeout");
+      }, 1000);
+
+      console.log("3 - Setelah setTimeout");
+
+      // Eksperimen 2: setTimeout delay 0ms
+      console.log("A");
+      setTimeout(() => console.log("B"), 0);
+      console.log("C");
+
+      // Eksperimen 3: Fetch API
+      console.log("Sebelum fetch");
+
+      fetch("https://jsonplaceholder.typicode.com/todos/1")
+        .then((res) => res.json())
+        .then((data) => console.log("Data fetch:", data.title));
+
+      console.log("Setelah fetch");
+    </script>
+  </body>
+</html>
